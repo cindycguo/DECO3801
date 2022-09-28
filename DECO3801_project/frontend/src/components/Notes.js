@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ContentHolder from './Content';
 
 function Notes(props) {
   return (
-
-    <h1> This is our notes page</h1>
-
+    <ContentHolder>
+        <h1> This is our notes page</h1>
+    </ContentHolder>
   );
 }
 
