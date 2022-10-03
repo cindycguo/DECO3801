@@ -3,6 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <style>
+        body {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            background-color: black;
+            margin-bottom: 1rem;
+        }
+
+        #error {
+            color: red;
+            padding: 0.6rem;
+            background-color: rgb(236 157 157);
+            margin-bottom: 0.6rem;
+            display: none;
+        }
+    </style>
     <title>Our scheduler app!</title>
     {% load static %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
