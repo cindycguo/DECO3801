@@ -1,34 +1,23 @@
 import * as React from 'react';
+import * as Annyang from 'annyang';
 
 export default function VoiceRecog() {
-    window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
-    let finalTranscript = '';
-    let recognition = new window.SpeechRecognition();
-
-    recognition.interimResults = true;
-    recognition.maxAlternatives = 10;
-    recognition.continuous = true;
-
-    recognition.onresult = (event) => {
-      let interimTranscript = '';
-      for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
-        let transcript = event.results[i][0].transcript;
-        if (event.results[i].isFinal) {
-          finalTranscript += transcript;
-        } else {
-          interimTranscript += transcript;
-        }
-      }
-
-      document.querySelector('body').innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</>';
-    }
-
-    recognition.start();
-
-
-    return (
-        <div>
-            <script></script>
-        </div>
-    );
+    if (annyang) {
+       // Let's define a command.
+       var anything = function(anything) {
+            alert(anything);
+        };
+        var commands = {
+            '*anything': anything
+        };
+       // This should be true
+       console.log(annyang.isListening())
+       // Add our commands to annyang
+       annyang.addCommands(commands);
+       // Start listening.
+       annyang.start();
+       annyang.addCallback('soundstart', function() {
+         console.log('sound detected');
+       });
+     }
 }

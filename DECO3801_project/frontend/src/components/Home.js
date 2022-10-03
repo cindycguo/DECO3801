@@ -9,6 +9,7 @@ function Home(props) {
     <ContentHolder>
       <h1> This is our homepage</h1>
       <CaptureVideo></CaptureVideo>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
       <VoiceRecog></VoiceRecog>
     </ContentHolder>
   );

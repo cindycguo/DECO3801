@@ -26,6 +26,7 @@
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.6",
+    "annyang": "^2.6.1",
     "css-loader": "^6.7.1",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.4.1",
