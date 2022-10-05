@@ -57,7 +57,7 @@ ROOT_URLCONF = 'DECO3801_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/"templates"],
+        'DIRS': [BASE_DIR / "frontend/templates/registration"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,11 +120,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# Redirect to login page
-LOGIN_REDIRECT_URL = "homepage"
-LOGOUT_REDIRECT_URL = "homepage"
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% if user.is_authenticated %}
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -48,6 +49,20 @@
       <div id="app"></div>
     </div>
 
+    <p>Hi {{ user.username }}!</p>
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+
     <script src="{% static "frontend/main.js" %}"></script>
   </body>
 </html>
+
+{% else %}
+<html>
+<head>
+  <meta http-equiv="refresh" content="0; URL={% url 'login' %}">
+</head>
+</head>
+<body>
+</body>
+</html>
+{% endif %}

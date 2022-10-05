@@ -6,8 +6,6 @@ import Notes from "./components/Notes";
 import Sessions from "./components/Sessions";
 import Navbar from "./components/Navbar";
 
-import Login, Logout from "./components/login";
-
 function App(props) {
     return (
         <Router>
@@ -16,8 +14,6 @@ function App(props) {
                 <Route path='/' element={<Home/>} />
                 <Route path='/notes' element={<Notes/>} />
                 <Route path='/sessions' element={<Sessions/>} />
-                <Route path='/login' element={<Login/>} />
-                <Route path='/logout' element={<Logout/>} />
             </Routes>
 
         </Router>
