@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/djangoReactProject.iml" filepath="$PROJECT_DIR$/.idea/djangoReactProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/git_rep.iml" filepath="$PROJECT_DIR$/.idea/git_rep.iml" />
     </modules>
   </component>
 </project>
