@@ -1,6 +1,8 @@
 # DECO3801
 DECO3801 show me the mud
 
+Must have Node.js installed!
+
 To run the site, open 2 terminals up.
 
 First Terminal:
