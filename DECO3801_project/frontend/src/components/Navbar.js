@@ -16,6 +16,7 @@ import TodayIcon from "@mui/icons-material/Today";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import HomeIcon from "@mui/icons-material/Home";
 import LanguageIcon from "@mui/icons-material/Language";
+import Login from "./Login";
 
 // Adapted from CBI Analytics React tutorial
 
@@ -42,21 +43,28 @@ function Navbar(props) {
           </ListItemIcon>
           <ListItemText primary={"Home"} />
         </ListItem>
+        
+        <ListItem component={Link} to='/login' button key={"2"} selected={'/login' === path}>
+          <ListItemIcon>
+            <TodayIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Login"} />
+        </ListItem>
 
-        <ListItem component={Link} to='/notes' button key={"2"} selected={'/notes' === path}>
+        <ListItem component={Link} to='/notes' button key={"3"} selected={'/notes' === path}>
           <ListItemIcon>
             <TodayIcon />
           </ListItemIcon>
           <ListItemText primary={"Notes"} />
         </ListItem>
 
-        <ListItem component={Link} to='/sessions' button key={"3"} selected={'/sessions' === path}>
+        <ListItem component={Link} to='/sessions' button key={"4"} selected={'/sessions' === path}>
           <ListItemIcon>
             <ScheduleIcon />
           </ListItemIcon>
           <ListItemText primary={"Sessions"} />
         </ListItem>
-        <ListItem component={Link} to='//cbi-analytics.nl/' button key={"4"}>
+        <ListItem component={Link} to='//cbi-analytics.nl/' button key={"5"}>
           <ListItemIcon>
             <LanguageIcon />
           </ListItemIcon>

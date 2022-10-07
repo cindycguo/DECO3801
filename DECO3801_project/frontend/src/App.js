@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Notes from "./components/Notes";
 import Sessions from "./components/Sessions";
 import Navbar from "./components/Navbar";
+import Login from "./components/Login";
 
 function App(props) {
     return (
@@ -12,6 +13,7 @@ function App(props) {
             <Navbar/>
             <Routes>
                 <Route path='/' element={<Home/>} />
+                <Route path='/login' element={<Login/>}/>
                 <Route path='/notes' element={<Notes/>} />
                 <Route path='/sessions' element={<Sessions/>} />
             </Routes>

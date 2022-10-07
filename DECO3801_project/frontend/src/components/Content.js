@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled } from '@mui/system';
 
+
 const drawerWidth = 220;
 
 const ContentHolder = styled('div')({
@@ -11,5 +12,7 @@ const ContentHolder = styled('div')({
   },
 
 });
+
+
 
 export default ContentHolder
