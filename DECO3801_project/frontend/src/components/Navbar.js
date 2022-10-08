@@ -64,12 +64,7 @@ function Navbar(props) {
           </ListItemIcon>
           <ListItemText primary={"Sessions"} />
         </ListItem>
-        <ListItem component={Link} to='//cbi-analytics.nl/' button key={"5"}>
-          <ListItemIcon>
-            <LanguageIcon />
-          </ListItemIcon>
-          <ListItemText primary={"Visit website"} />
-        </ListItem>
+        <p class="logout-wrap"><a href="accounts/logout" class="logout">Log Out</a></p>
       </List>
     </div>
   );

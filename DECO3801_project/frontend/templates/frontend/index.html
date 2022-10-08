@@ -5,6 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
       <style>
+        .logout-wrap {
+          text-align: center;
+          margin-top: 150%;
+        }
+
+        .logout {
+          font: bold 11px Arial;
+          text-decoration: none;
+          background-color: #EEEEEE;
+          color: #333333;
+          padding: 6px 10px 6px 10px;
+          border-top: 1px solid #CCCCCC;
+          border-right: 1px solid #333333;
+          border-bottom: 1px solid #333333;
+          border-left: 1px solid #CCCCCC;
+        }
+
         body {
             text-align: center;
             display: flex;
@@ -50,7 +67,6 @@
     </div>
 
     <p>Hi {{ user.username }}!</p>
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
 
     <script src="{% static "frontend/main.js" %}"></script>
   </body>
