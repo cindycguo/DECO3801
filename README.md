@@ -3,6 +3,10 @@ DECO3801 show me the mud
 
 Must have Node.js installed!
 
+Dependencies required:
+Annyang 
+PeerJS
+
 To run the site, open 2 terminals up.
 
 First Terminal:
