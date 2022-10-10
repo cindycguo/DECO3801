@@ -57,7 +57,7 @@ ROOT_URLCONF = 'DECO3801_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "frontend/templates/registration"],
+        'DIRS': [BASE_DIR / "frontend/src/components/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,113 @@
+$sub-color:grey;
+$main-color:black;
+
+@mixin shrinkLabel {
+    top:-14px;
+    font-size: 12px;
+    color:$main-color
+}
+.background-img {
+    max-width: 1vw;
+    max-height: 1vw;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+}
+
+.login-form {
+    padding: 10%;
+    margin-left: 50%;
+    margin-top: 6%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    align-items: center;
+
+    min-width: 100px;
+    min-height: 150px;
+    width: 10%;
+    height: 30%;
+    background-color: white;
+    opacity: 0.8;
+    border-color: white;
+}
+
+body {
+    font-family: helvetica, sans-serif;
+}
+
+#login {
+    font-size: 2em;
+    display: flex;
+    align-self: space-evenly;
+}
+
+.sign-in {
+    width: 20vw;
+    height: 20vw;
+    margin-top: 10%;
+    padding: 1vw;
+    display: flex;
+    position: relative;
+
+    flex-direction: column;
+    justify-content: center;
+    align-contents: center;
+}
+
+.custom-button {
+    min-width: 80px;
+    width: 10%;
+    height: 50px;
+    display: flex;
+    position: relative;
+    padding: 0 10px 0 10px;
+    margin-top: 10px;
+
+    letter-spacing:0.5px;
+    line-height: 20px;
+    font-size: 13px;
+    color: white;
+    text-transform: uppercase;
+    font-weight:bolder;
+    text-align: center;
+
+    border-radius: 5px;
+    border: 1px black;
+    cursor: pointer;
+
+    align-self: center;
+    justify-content: center;
+    background-color: black;
+}
+.custom-button:hover{
+    background-color: blue;
+    color: white;
+    border: 1px blue;
+    border-radius: 5px;
+}
+
+.form input{
+        background: none;
+        background-color: blue;
+        color:$sub-color;
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 90%;
+        border:none;
+        border-radius: 0;
+        border-bottom: 1px solid $sub-color;
+        margin:25px 0;
+
+        &:focus{
+            outline: none;
+        }
+        &:focus ~ .form-input-label{
+            @include shrinkLabel()
+        }
+}
