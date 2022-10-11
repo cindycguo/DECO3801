@@ -6,6 +6,7 @@ Must have Node.js installed!
 Dependencies required:
 Annyang 
 PeerJS
+uuidv4
 
 To run the site, open 2 terminals up.
 
