@@ -27,14 +27,14 @@ function Employee(props) {
 
       </Form.Group>
       <Container>
-      <Row xs={4} md={4} lg={6}>
-        <Col><Button>All</Button></Col>
-        <Col><Button>Inactive sessions</Button></Col>
-        <Col><Button>Active sessions</Button></Col>
-        <Col><Button>Add Employee</Button></Col>
+      <Row>
+        <Col md={{ span: 1}}>All</Col>
+        <Col md={{ span: 1, offset: 1 }}><Button>Inactive sessions</Button></Col>
+        <Col md={{ span: 1, offset: 1 }}><Button>Active sessions</Button></Col>
+        <Col md={{ span: 1, offset: 4 }}><Button>Add Employee</Button></Col>
       </Row>
       <Row>
-        <Col md={4}>User ID</Col>
+        <Col>User ID</Col>
         <Col>Employee</Col>
         <Col>Session Name</Col>
       </Row>

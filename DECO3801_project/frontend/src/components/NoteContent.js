@@ -5,6 +5,9 @@ import "./css/Note.css";
 import Note from "./Note"
 import CreateNote from "./CreateNote"; 
 import NoteEdit from "./NoteEdit";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Stack from 'react-bootstrap/Stack';
 
 function NoteContent() {
 
@@ -94,6 +97,12 @@ function NoteContent() {
         <input type="text" placeholder='Search...' 
           onChange={(event) => {setSearchTerm(event.target.value)}} />
       </div>
+      <Stack direction="horizontal" gap={3}>
+        <Form.Control className="me-auto" placeholder="Add your item here..." onChange={(event) => {setSearchTerm(event.target.value)}}/>
+        <Button variant="secondary">Submit</Button>
+        <div className="vr" />
+        <Button variant="outline-danger">Reset</Button>
+      </Stack>
       <div className="noteContent">
         <CreateNote 
           textHandler={textHandler}
