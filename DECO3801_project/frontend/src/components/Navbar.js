@@ -16,7 +16,6 @@ import TodayIcon from "@mui/icons-material/Today";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import HomeIcon from "@mui/icons-material/Home";
 import LanguageIcon from "@mui/icons-material/Language";
-import Employee from "./Employee";
 
 // Adapted from CBI Analytics React tutorial
 

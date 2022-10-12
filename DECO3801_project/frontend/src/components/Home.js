@@ -6,8 +6,6 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
 import './css/Home.css'
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 
 

@@ -24,7 +24,7 @@ function Employee(props) {
         <Col><Button>Add Employee</Button></Col>
       </Row>
       <hr></hr>
-     
+    
 
 
       <Table striped>
@@ -70,7 +70,7 @@ function Employee(props) {
         </tbody>
       </Table>
       
-    </Container>
+      </Container>
     </ContentHolder>
     
   );
@@ -82,3 +82,5 @@ Employee.propTypes = {
 
 export default Employee;
             
+
+      
