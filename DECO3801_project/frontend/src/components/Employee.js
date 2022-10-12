@@ -7,45 +7,69 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
+
 
 
 function Employee(props) {
 
   return (
     <ContentHolder>
-        Employee
-      <Form.Group className="mb-3">
-        <Form.Label>Please insert your email or ID:</Form.Label>
-        <Form.Control placeholder="Email/ID:" />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>Please insert your password</Form.Label>
-        <Form.Control placeholder="Password(case sensitive):" />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Check type="checkbox" label="remember me" />
+      <Container style={{marginTop: "50px"}}>
+        <h1>Employees</h1>
+      <Row>
+        <Col><Button>All</Button></Col>
+        <Col><Button>Inactive sessions</Button></Col>
+        <Col><Button>Active sessions</Button></Col>
+        <Col><Button>Add Employee</Button></Col>
+      </Row>
+      <hr></hr>
+     
 
-      </Form.Group>
-      <Container>
-      <Row>
-        <Col md={{ span: 1}}>All</Col>
-        <Col md={{ span: 1, offset: 1 }}><Button>Inactive sessions</Button></Col>
-        <Col md={{ span: 1, offset: 1 }}><Button>Active sessions</Button></Col>
-        <Col md={{ span: 1, offset: 4 }}><Button>Add Employee</Button></Col>
-      </Row>
-      <Row>
-        <Col>User ID</Col>
-        <Col>Employee</Col>
-        <Col>Session Name</Col>
-      </Row>
-      <Row>
-        <Col>123456</Col>
-        <Col>SOMEIMG</Col>
-        <Col>Chemical lab</Col>
-        <Col><Button>Eidt</Button></Col>
-        <Col><Button>History</Button></Col>
-        <Col><Button>View Session</Button></Col>
-      </Row>
+
+      <Table striped>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>User ID</th>
+            <th>Employee</th>
+            <th>Session Name</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td><Button>Eidt</Button></td>
+            <td><Button>History</Button></td>
+            <td><Button>Vie Session</Button></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td><Button>Eidt</Button></td>
+            <td><Button>History</Button></td>
+            <td><Button>Vie Session</Button></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry the Bird</td>
+            <td>Thornton</td>
+            <td>@twitter</td>
+            <td><Button>Eidt</Button></td>
+            <td><Button>History</Button></td>
+            <td><Button>Vie Session</Button></td>
+          </tr>
+        </tbody>
+      </Table>
+      
     </Container>
     </ContentHolder>
     
