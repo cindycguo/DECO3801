@@ -11,9 +11,9 @@ function Sessions(props) {
     <ContentHolder>
         <h1 className='session-title'>Session</h1>
         <p id="para">0</p>
-        <Button className='btn'>Start</Button>
-        <Button className='btn'>Get</Button>
-        <Button className='btn'>Stop</Button>
+        <Button className='btn' id='btnStart'>Start</Button>
+        <Button className='btn' id='btnGet'>Get</Button>
+        <Button className='btn' id='btnStop'>Stop</Button>
         <CaptureVideo></CaptureVideo>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
         <VoiceRecog></VoiceRecog>
