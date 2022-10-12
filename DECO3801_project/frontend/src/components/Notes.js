@@ -8,7 +8,7 @@ function Notes(props) {
 
   return (
     <ContentHolder>
-      <h1 className="header">My Note ha</h1>
+      <h1 className="header">My Note</h1>
       <div className="main">
         <NoteContent />
       </div>
