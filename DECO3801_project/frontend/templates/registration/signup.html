@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  {% block title %} <title> Bio-Seconds </title> {% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+  <div class = "background-img">
+    {% load static %}
+    <img src = "{% static 'css/jellyfish.jpg' %}" alt = "jellyfishes swimming :D">
+  </div>
+
+  <div class = login-form>
+    {% block content %}
+
+    <h2>Sign up</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Sign Up</button>
+    </form>
+
+    {% endblock %}
+  </div>
+
+</body>
+</html>
