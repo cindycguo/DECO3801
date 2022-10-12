@@ -93,15 +93,15 @@ function NoteContent() {
 
   return (
     <div>
-      <div className="search">
+      {/* <div className="search">
         <input type="text" placeholder='Search...' 
           onChange={(event) => {setSearchTerm(event.target.value)}} />
-      </div>
+      </div> */}
       <Stack direction="horizontal" gap={3}>
-        <Form.Control className="me-auto" placeholder="Add your item here..." onChange={(event) => {setSearchTerm(event.target.value)}}/>
-        <Button variant="secondary">Submit</Button>
+        <Form.Control className="search" placeholder="Search by title..." onChange={(event) => {setSearchTerm(event.target.value)}}/>
+        {/* <Button variant="secondary">Submit</Button>
         <div className="vr" />
-        <Button variant="outline-danger">Reset</Button>
+        <Button variant="outline-danger">Reset</Button> */}
       </Stack>
       <div className="noteContent">
         <CreateNote 

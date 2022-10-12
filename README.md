@@ -7,6 +7,7 @@ Dependencies required:
 Annyang 
 PeerJS
 uuidv4
+react-calendar 
 
 To run the site, open 2 terminals up.
 
