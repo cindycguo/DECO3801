@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useRef, useEffect, useState, Component } from 'react';
 import Peer from 'peerjs';
+import Button from 'react-bootstrap/Button';
 
 class CaptureVideo extends Component {
 
@@ -257,9 +258,9 @@ class CaptureVideo extends Component {
             type="text"
             value={this.state.message}
             onChange={e => { this.setState({ message: e.target.value }); }} />
-          <button onClick={this.send}>Send</button>
+          <Button onClick={this.send}>Send</Button>
 
-          <button onClick={this.videoCall}>Video Call</button>
+          <Button onClick={this.videoCall}>Video Call</Button>
           {
             this.state.messages.map((message, i) => {
               return (
