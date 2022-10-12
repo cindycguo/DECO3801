@@ -17,6 +17,7 @@ function Employee(props) {
     <ContentHolder>
       <Container style={{marginTop: "50px"}}>
         <h1>Employees</h1>
+      <hr></hr>
       <Row>
         <Col><Button>All</Button></Col>
         <Col><Button>Inactive sessions</Button></Col>

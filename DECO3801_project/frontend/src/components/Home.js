@@ -7,6 +7,8 @@ import 'react-calendar/dist/Calendar.css'
 import './css/Home.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/esm/Button';
+import Container from 'react-bootstrap/esm/Container';
 
 
 function Home(props) {
@@ -16,43 +18,53 @@ function Home(props) {
   return (
 
     <ContentHolder>
-      <h1 className='upcomingTitle'> Upcoming Sessions </h1>
-        
-      <Table striped>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>User ID</th>
-            <th>Employee</th>
-            <th>Session Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>Thornton</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </Table>
-
+      <Container style={{marginTop: "50px"}}>
+        <h1> Upcoming Sessions </h1>
+        <hr></hr>
+        <Table striped>
+          <thead>
+            <tr>
+              <th>Session</th>
+              <th>Time</th>
+              <th>Date</th>
+              <th>Employee</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td><Button>Start</Button></td>
+              <td><Button>Edit</Button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td><Button>Start</Button></td>
+              <td><Button>Edit</Button></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Larry the Bird</td>
+              <td>Thornton</td>
+              <td>@twitter</td>
+              <td><Button>Start</Button></td>
+              <td><Button>Edit</Button></td>
+            </tr>
+          </tbody>
+        </Table>
+        <hr></hr>
         <h1 className='calenderTitle'> My Calender </h1>
         <div className="calendar-container">
           <Calendar onChange={setDate} value={date}/>
         </div>
+      </Container>    
     </ContentHolder>
   );
 }
