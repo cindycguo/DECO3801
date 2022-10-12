@@ -105,6 +105,135 @@ class CaptureVideo extends Component {
                 toggleAudio.innerHTML = 'Mute'
             }
         })
+
+        // RECORDING FUNCTION
+        var recorder;
+        const recordButton = document.getElementById('record');
+        const stopButton = document.getElementById('stop');
+        recordButton.disabled = false;
+        recordButton.addEventListener('click', startRecording);
+        stopButton.addEventListener('click', stopRecording);
+
+        function startRecording() {
+          recorder = new MediaRecorder(stream);
+
+          recorder.addEventListener('dataavailable', onRecordingReady);
+
+          recordButton.disabled = true;
+          stopButton.disabled = false;
+
+          recorder.start();
+        }
+
+        function stopRecording() {
+          recordButton.disabled = false;
+          stopButton.disabled = true;
+
+          // Stopping the recorder will eventually trigger the 'dataavailable' event and we can complete the recording process
+          recorder.stop();
+        }
+
+        function onRecordingReady(e) {
+          var video = document.getElementById('recording');
+          // e.data contains a blob representing the recording
+          video.src = URL.createObjectURL(e.data);
+          video.play();
+        }
+
+        // CANVAS / POINTER FUNCTION
+        const canvas = document.querySelector('canvas');
+        const video = document.querySelector('video');
+        const width = 400;
+        const height = 300;
+
+        const ssbtn = document.getElementById('ssbtn');
+        ssbtn.addEventListener('click', drawImage);
+
+        var ctx = canvas.getContext('2d', { alpha: false })
+
+        function drawImage() {
+          ctx.drawImage(video, 0, 0, width, height);
+        }
+
+        var pressedMouse = false;
+        var x;
+        var y;
+        var colorLine ="#9ACD32";
+        var key = {C: 67};
+
+        canvas.addEventListener("mousedown", startDrawing);
+        canvas.addEventListener("mousemove", drawLine);
+        canvas.addEventListener("mouseup", stopDrawing);
+        canvas.addEventListener("keydown", clearCanvas);
+
+        function startDrawing(eventvs01){
+            pressedMouse = true;
+            x = eventvs01.offsetX;
+            y = eventvs01.offsetY;
+        }
+
+        function drawLine(eventvs02) {
+            if (pressedMouse) {
+                var xM = eventvs02.offsetX;
+                var yM = eventvs02.offsetY;
+                drawing_line(colorLine, x, y, xM, yM, ctx);
+                x = xM;
+                y = yM;
+            }
+        }
+
+        function stopDrawing(eventvs03) {
+            pressedMouse = false;
+        }
+
+        function clearCanvas(whenPressKey) {
+            if (whenPressKey.keyCode == key.C) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        drawing_line("#FF6347", x-1, y, x, y, ctx);
+
+        function drawing_line(color, x_start, y_start, x_end, y_end, board){
+            board.beginPath();
+            board.strokeStyle = color;
+            board.lineWidth = 2;
+            board.moveTo(x_start,y_start);
+            board.lineTo(x_end,y_end);
+            board.stroke();
+            board.closePath();
+        }
+
+
+        // TIMESTAMP
+        var check = null;
+        const btnStart = document.getElementById('btnStart');
+        btnStart.addEventListener('click', printDuration);
+        const btnGet = document.getElementById('btnGet');
+        btnGet.addEventListener('click', printNum);
+        const btnStop = document.getElementById('btnStop');
+        btnStop.addEventListener('click', stop);
+
+        var cnt = 0;
+
+        function printDuration() {
+            if (check == null) {
+                check = setInterval(function () {
+                    cnt += 1;
+                    console.log(cnt);
+                }, 1000);
+            }
+        }
+
+        function printNum() {
+            document.getElementById("para").innerHTML = cnt;
+        }
+
+        function stop() {
+            clearInterval(check);
+            check = null;
+            document.getElementById("para").innerHTML = '0';
+        }
     });
   }
 
@@ -146,7 +275,7 @@ class CaptureVideo extends Component {
 
         <div className="col">
           <div>
-            <video ref={ref => this.myVideo = ref} />
+            <video id="vid" ref={ref => this.myVideo = ref} />
           </div>
           <div>
             <video ref={ref => this.friendVideo = ref} />

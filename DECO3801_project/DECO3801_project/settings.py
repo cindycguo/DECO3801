@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api_events.apps.ApiEventsConfig',
     'frontend.apps.FrontendConfig',
+    'accounts',
 ]
 
 MIDDLEWARE = [
