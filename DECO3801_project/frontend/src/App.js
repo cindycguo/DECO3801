@@ -6,6 +6,7 @@ import Notes from "./components/Notes";
 import Sessions from "./components/Sessions";
 import Navbar from "./components/Navbar";
 import Employee from "./components/Employee";
+import NewSession from "./components/Newsession";
 
 function App(props) {
     return (
@@ -16,6 +17,7 @@ function App(props) {
                 <Route path='/employee' element={<Employee/>}/>
                 <Route path='/notes' element={<Notes/>} />
                 <Route path='/sessions' element={<Sessions/>} />
+                <Route path='/newsessions' element={<NewSession/>} />
             </Routes>
 
         </Router>

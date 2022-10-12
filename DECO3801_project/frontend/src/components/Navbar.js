@@ -63,6 +63,12 @@ function Navbar(props) {
           </ListItemIcon>
           <ListItemText primary={"Sessions"} />
         </ListItem>
+        <ListItem component={Link} to='/newsessions' button key={"5"} selected={'/newsessions' === path}>
+          <ListItemIcon>
+            <ScheduleIcon />
+          </ListItemIcon>
+          <ListItemText primary={"New Sessions"} />
+        </ListItem>
         <p class="logout-wrap"><a href="accounts/logout" class="logout">Log Out</a></p>
       </List>
     </div>
