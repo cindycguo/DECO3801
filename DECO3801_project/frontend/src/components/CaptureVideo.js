@@ -106,8 +106,12 @@ class CaptureVideo extends Component {
             }
         })
 
-        // RECORDING FUNCTION
+        // RECORDING FUNCTION (with timestamp)
         var recorder;
+        var check = null;
+        var cnt = 0;
+        const btnGet = document.getElementById('btnGet');
+        btnGet.addEventListener('click', printNum);
         const recordButton = document.getElementById('record');
         const stopButton = document.getElementById('stop');
         recordButton.disabled = false;
@@ -122,12 +126,22 @@ class CaptureVideo extends Component {
           recordButton.disabled = true;
           stopButton.disabled = false;
 
+          if (check == null) {
+            check = setInterval(function () {
+              cnt += 1;
+            }, 1000);
+          }
+
           recorder.start();
         }
 
         function stopRecording() {
           recordButton.disabled = false;
           stopButton.disabled = true;
+
+          clearInterval(check);
+          check = null;
+          cnt = 0;
 
           // Stopping the recorder will eventually trigger the 'dataavailable' event and we can complete the recording process
           recorder.stop();
@@ -140,11 +154,29 @@ class CaptureVideo extends Component {
           video.play();
         }
 
+        function printNum() {
+            // Convert to mins / secs
+            var hrs = ~~(cnt / 3600);
+            var mins = ~~((cnt % 3600) / 60);
+            var secs = ~~cnt % 60;
+
+            // Output like "1:01" or "4:03:59" or "123:03:59"
+            var time = "";
+
+            if (hrs > 0) {
+                time += "" + hrs + ":" + (mins < 10 ? "0" : "");
+            }
+
+            time += "" + mins + ":" + (secs < 10 ? "0" : "");
+            time += "" + secs;
+            document.getElementById("para").innerHTML += "<br />" + time;
+        }
+
         // CANVAS / POINTER FUNCTION
         const canvas = document.querySelector('canvas');
         const video = document.querySelector('video');
-        const width = 400;
-        const height = 300;
+        const width = 200;
+        const height = 150;
 
         const ssbtn = document.getElementById('ssbtn');
         ssbtn.addEventListener('click', drawImage);
@@ -152,6 +184,12 @@ class CaptureVideo extends Component {
         var ctx = canvas.getContext('2d', { alpha: false })
 
         function drawImage() {
+          var x = document.getElementById("canvas");
+          if (x.style.display == "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
           ctx.drawImage(video, 0, 0, width, height);
         }
 
@@ -203,37 +241,6 @@ class CaptureVideo extends Component {
             board.stroke();
             board.closePath();
         }
-
-
-        // TIMESTAMP
-        var check = null;
-        const btnStart = document.getElementById('btnStart');
-        btnStart.addEventListener('click', printDuration);
-        const btnGet = document.getElementById('btnGet');
-        btnGet.addEventListener('click', printNum);
-        const btnStop = document.getElementById('btnStop');
-        btnStop.addEventListener('click', stop);
-
-        var cnt = 0;
-
-        function printDuration() {
-            if (check == null) {
-                check = setInterval(function () {
-                    cnt += 1;
-                    console.log(cnt);
-                }, 1000);
-            }
-        }
-
-        function printNum() {
-            document.getElementById("para").innerHTML = cnt;
-        }
-
-        function stop() {
-            clearInterval(check);
-            check = null;
-            document.getElementById("para").innerHTML = '0';
-        }
     });
   }
 
@@ -241,47 +248,67 @@ class CaptureVideo extends Component {
     return (
       <div className="wrapper">
         <div className="col">
-          <h1>My ID: {this.state.myId}</h1>
+          <p><b>My ID:</b> {this.state.myId}</p>
 
-          <label>Friend ID:</label>
+          <label><b>Friend ID: </b></label>
           <input
             type="text"
             value={this.state.friendId}
             onChange={e => { this.setState({ friendId: e.target.value }); }} />
-
+          <button onClick={this.videoCall}>Connect</button>
           <br />
           <br />
-
-          <label>Message:</label>
-          <input
-            type="text"
-            value={this.state.message}
-            onChange={e => { this.setState({ message: e.target.value }); }} />
-          <button onClick={this.send}>Send</button>
-
-          <button onClick={this.videoCall}>Video Call</button>
-          {
-            this.state.messages.map((message, i) => {
-              return (
-                <div key={i}>
-                  <strong><p>{message.sender}:</p></strong>
-                  <p>{message.message}</p>
-                </div>
-
-              )
-            })
-          }
         </div>
 
         <div className="col">
           <div>
-            <video id="vid" ref={ref => this.myVideo = ref} />
-          </div>
-          <div>
-            <video ref={ref => this.friendVideo = ref} />
+            <center>
+            <div id="wrapper">
+                <div id="vidWrapper">
+                    <div id='vidiv'>
+                        <video id='vid' ref={ref => this.myVideo = ref} />
+                        <br />
+                        <button id="toggle-video">Hide</button>
+                        <button id="toggle-audio">Mute</button>
+                        <button id="record" disabled>Record</button>
+                        <button id="stop" disabled>Stop</button>
+                        <button id="btnGet">Timestamp</button>
+                        <button id="ssbtn">Pointer</button>
+                    </div>
+                    <div id="vidiv2">
+                        <canvas id="canvas" width="200" height="150" style={{display : "none"}}></canvas>
+                    </div>
+                </div>
+                <div id="menu">
+                    <div id='sendBtn'>
+                        <input
+                          type="text"
+                          value={this.state.message}
+                          onChange={e => { this.setState({ message: e.target.value }); }} />
+                        <button id='sendDat' onClick={this.send}>Send</button>
+                    </div>
+                </div>
+
+                <div id="chatbox">
+                  {
+                    this.state.messages.map((message, i) => {
+                      return (
+                        <div key={i}>
+                          <strong><p>{message.sender}:</p></strong>
+                          <p>{message.message}</p>
+                        </div>
+
+                      )
+                    })
+                  }
+                </div>
+            </div>
+
+            </center>
           </div>
         </div>
-
+        <br />
+        <br />
       </div>
     );
   }
