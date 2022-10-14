@@ -25,8 +25,6 @@ function Employee(props) {
         <Col><Button>Add Employee</Button></Col>
       </Row>
       <hr></hr>
-    
-
 
       <Table striped>
         <thead>
@@ -46,27 +44,27 @@ function Employee(props) {
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
-            <td><Button>Eidt</Button></td>
+            <td><Button>Edit</Button></td>
             <td><Button>History</Button></td>
-            <td><Button>Vie Session</Button></td>
+            <td><Button>View Session</Button></td>
           </tr>
           <tr>
             <td>2</td>
             <td>Jacob</td>
             <td>Thornton</td>
             <td>@fat</td>
-            <td><Button>Eidt</Button></td>
+            <td><Button>Edit</Button></td>
             <td><Button>History</Button></td>
-            <td><Button>Vie Session</Button></td>
+            <td><Button>View Session</Button></td>
           </tr>
           <tr>
             <td>3</td>
             <td>Larry the Bird</td>
             <td>Thornton</td>
             <td>@twitter</td>
-            <td><Button>Eidt</Button></td>
+            <td><Button>Edit</Button></td>
             <td><Button>History</Button></td>
-            <td><Button>Vie Session</Button></td>
+            <td><Button>View Session</Button></td>
           </tr>
         </tbody>
       </Table>
