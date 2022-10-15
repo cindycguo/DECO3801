@@ -15,6 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from api_events.views import SessionView
+from rest_framework import routers
+
+route = routers.DefaultRouter()
+route.register("", SessionView, basename="sessionview")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -22,4 +27,5 @@ urlpatterns = [
     path('', include('frontend.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path("accounts/", include("accounts.urls")),
+    path('api/', include(route.urls)),
 ]

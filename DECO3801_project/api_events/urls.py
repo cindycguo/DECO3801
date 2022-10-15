@@ -1,6 +1,5 @@
-from .views import *
+from .import views
 from django.urls import path, include
 
 urlpatterns = [
-   path('session/api', SessionView.as_view()),
 ]

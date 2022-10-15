@@ -7,6 +7,11 @@ import Sessions from "./components/Sessions";
 import Navbar from "./components/Navbar";
 import Employee from "./components/Employee";
 import NewSession from "./components/Newsession";
+import PostSessions from "./components/PostSessions";
+import ShowSessions from './components/ShowSessions';
+import AddSession from './components/AddSession';
+import UpdateSession from './components/UpdateSession';
+import SessionDetail from './components/SessionDetails';
 
 function App(props) {
     return (
@@ -18,6 +23,9 @@ function App(props) {
                 <Route path='/notes' element={<Notes/>} />
                 <Route path='/sessions' element={<Sessions/>} />
                 <Route path='/newsessions' element={<NewSession/>} />
+                <Route exact path='/postsessions' element={<PostSessions/>} />
+                <Route exact path="/postsessions/:id/update" element={<UpdateSession/>} />
+                <Route exact path="/postsessions/:id/" element={<SessionDetail/>} />
             </Routes>
 
         </Router>

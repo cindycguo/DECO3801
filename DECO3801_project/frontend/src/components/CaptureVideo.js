@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useRef, useEffect, useState, Component } from 'react';
 import Peer from 'peerjs';
+import { Link, useLocation } from "react-router-dom";
 
 class CaptureVideo extends Component {
 
@@ -302,6 +303,7 @@ class CaptureVideo extends Component {
                     })
                   }
                 </div>
+                <Link to='/postsessions'>End Session</Link>
             </div>
 
             </center>
