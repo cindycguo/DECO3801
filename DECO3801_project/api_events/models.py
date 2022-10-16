@@ -62,3 +62,28 @@ class Session(models.Model):
 
     def __str__(self):
         return self.name
+
+                 
+
+   
+
+
+
+    
+       
+
+
+    # Status Field
+
+
+    def is_active(self):
+        return self.status in {self.ACTIVE}
+
+    def get_notes(self):
+        return self.notes
+
+    def get_type(self):
+        return self.type
+
+    def __str__(self):
+        return self.name
