@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import './css/Session.css'
 
 const UpdateSession = () => {
 
@@ -46,6 +48,11 @@ const UpdateSession = () => {
 
         <div className="container">
           <div className="w-75 mx-auto shadow p-5">
+            <ArrowBackIcon 
+                className='back'
+                onClick={() => history(-1)}
+                aria-hidden="true"
+            ></ArrowBackIcon>
             <h2 className="text-center mb-4">Update A Session</h2>
 
               <div className="form-group">
