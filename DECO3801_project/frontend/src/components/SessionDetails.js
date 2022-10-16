@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react';
 import ContentHolder from './Content';
 import { useParams, useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import './css/Session.css'
 
 const SessionDetail = () => {
 
@@ -36,6 +38,11 @@ const deleteUser = async (id) => {
             <ContentHolder>
                 <h2>Detail of Single Session </h2>
                 <hr></hr>
+                <ArrowBackIcon 
+                    className='back'
+                    onClick={() => history(-1)}
+                    aria-hidden="true"
+                ></ArrowBackIcon>
                 <div>
                     <div>
                         <p>{session.id}</p>

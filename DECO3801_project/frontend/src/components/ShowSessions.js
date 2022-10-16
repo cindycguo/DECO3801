@@ -2,11 +2,14 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import './css/Session.css'
 
 const ShowSessions = () => {
 
     const [sessions, setSessions] = useState([])
+    const history = useNavigate();
 
     const fetchSessions = async () => {
         const result = await axios.get('http://localhost:8000/api/');
@@ -25,6 +28,11 @@ const ShowSessions = () => {
 
     return (
         <div>
+            <ArrowBackIcon 
+                className='back'
+                onClick={() => history(-1)}
+                aria-hidden="true"
+            ></ArrowBackIcon>
             <div className="">
             {
                 sessions.map((session, index) => (

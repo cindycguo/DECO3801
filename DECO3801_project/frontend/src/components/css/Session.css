@@ -1,0 +1,6 @@
+.back {
+    cursor: pointer;
+}
+.back:hover {
+    transform: scale(1.1);
+}
