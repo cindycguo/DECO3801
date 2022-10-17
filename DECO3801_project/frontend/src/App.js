@@ -12,6 +12,10 @@ import ShowSessions from './components/ShowSessions';
 import AddSession from './components/AddSession';
 import UpdateSession from './components/UpdateSession';
 import SessionDetail from './components/SessionDetails';
+import ShowEmployees from './components/ShowEmployees';
+import AddEmployee from './components/AddEmployee';
+import UpdateEmployee from './components/UpdateEmployee';
+import EmployeeDetail from './components/EmployeeDetails';
 
 function App(props) {
     return (
@@ -20,6 +24,8 @@ function App(props) {
             <Routes>
                 <Route path='/' element={<Home/>} />
                 <Route path='/employee' element={<Employee/>}/>
+                <Route path='/employee/:emp_no/update' element={<UpdateEmployee/>}/>
+                <Route path='/employee/:emp_no/' element={<EmployeeDetail/>}/>
                 <Route path='/notes' element={<Notes/>} />
                 <Route path='/sessions' element={<Sessions/>} />
                 <Route path='/newsessions' element={<NewSession/>} />

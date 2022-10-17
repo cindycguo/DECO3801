@@ -20,7 +20,7 @@ const AddSession = () => {
 
         await axios({
           method: 'post',
-          url:'http://localhost:8000/api/',
+          url:'http://localhost:8000/api/sessions/',
           data: formField
         }).then(response=>{
           console.log(response.data);

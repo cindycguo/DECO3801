@@ -8,7 +8,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-
+import ShowEmployees from './ShowEmployees';
+import AddEmployee from './AddEmployee';
 
 
 function Employee(props) {
@@ -68,6 +69,9 @@ function Employee(props) {
           </tr>
         </tbody>
       </Table>
+
+      <ShowEmployees></ShowEmployees>
+      <AddEmployee></AddEmployee>
       
       </Container>
     </ContentHolder>

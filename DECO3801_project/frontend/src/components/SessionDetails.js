@@ -8,28 +8,28 @@ import './css/Session.css'
 
 const SessionDetail = () => {
 
-const [session, setSession] = useState([])
+    const [session, setSession] = useState([])
 
-const {id} = useParams();
-const history = useNavigate();
+    const {id} = useParams();
+    const history = useNavigate();
 
-useEffect(() => {
-    getSingleSession();
-},[])
-
-
-const getSingleSession = async () => {
-  const  { data } = await axios.get(`http://127.0.0.1:8000/api/${id}/`)
-  console.log(data);
-  setSession(data);
+    useEffect(() => {
+        getSingleSession();
+    },[])
 
 
-}
+    const getSingleSession = async () => {
+      const  { data } = await axios.get(`http://127.0.0.1:8000/api/sessions/${id}/`)
+      console.log(data);
+      setSession(data);
 
-const deleteUser = async (id) => {
-    await axios.delete(`http://127.0.0.1:8000/api/${id}/`)
-    history.push("/")
-}
+
+    }
+
+    const deleteUser = async (id) => {
+        await axios.delete(`http://127.0.0.1:8000/api/sessions/${id}/`)
+        history.push("/")
+    }
 
 
 

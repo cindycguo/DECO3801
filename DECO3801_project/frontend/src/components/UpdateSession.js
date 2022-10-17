@@ -19,7 +19,7 @@ const UpdateSession = () => {
     }, [])
 
     let loadSessions = async () => {
-        const result = await axios.get(`http://127.0.0.1:8000/api/${id}`);
+        const result = await axios.get(`http://127.0.0.1:8000/api/sessions/${id}`);
         console.log(result.data.name);
 
         setName(result.data.name);
@@ -36,7 +36,7 @@ const UpdateSession = () => {
 
         await axios({
             method: 'PUT',
-            url: `http://127.0.0.1:8000/api/${id}/`,
+            url: `http://127.0.0.1:8000/api/sessions/${id}/`,
             data: formField
         }).then(response => {
             console.log(response.data);

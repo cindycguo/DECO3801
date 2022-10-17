@@ -13,9 +13,9 @@ class Supervisor(models.Model):
     last_name = models.CharField(_('Last name'), max_length=15)
     hire_date = models.DateField(_('hire date'))
 
-
     def __str__(user):
         return user.first_name
+
 
 class Employee(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

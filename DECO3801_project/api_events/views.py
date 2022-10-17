@@ -14,8 +14,6 @@ class CsrfExemptSessionAuthentication(SessionAuthentication):
         return  # To not perform the csrf check previously happening
 
 
-
-
 class SessionView(viewsets.ModelViewSet):
     queryset = Session.objects.all()
     serializer_class = SessionSerializer
@@ -37,8 +35,6 @@ def showAllSessions(request):
     permisions = Permission.objects.all()
     serilizer = SessionSerializer(permisions, many=True)
     return Response(serilizer.data)
-
-
 
 @api_view(['GET'])
 def showSingleSession(request, pk):

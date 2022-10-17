@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from api_events.views import SessionView
+from accounts.views import EmployeeView
 from rest_framework import routers
 
 route = routers.DefaultRouter()
-route.register("", SessionView, basename="sessionview")
+route.register("sessions", SessionView, basename="sessionview")
+route.register("employees", EmployeeView, basename="employeeview")
 
 urlpatterns = [
     path('admin/', admin.site.urls),

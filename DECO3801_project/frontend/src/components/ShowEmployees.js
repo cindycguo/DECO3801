@@ -4,22 +4,21 @@ import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import './css/Session.css'
 
-const ShowSessions = () => {
+const ShowEmployees = () => {
 
-    const [sessions, setSessions] = useState([])
+    const [employees, setEmployees] = useState([])
     const history = useNavigate();
 
-    const fetchSessions = async () => {
-        const result = await axios.get('http://localhost:8000/api/sessions/');
+    const fetchEmployees = async () => {
+        const result = await axios.get('http://localhost:8000/api/employees/');
 
         console.log(result.data)
-        setSessions(result.data)
+        setEmployees(result.data)
     }
 
     useEffect(() => {
-        fetchSessions();
+        fetchEmployees();
     }, [])
 
     const goToDetail = () => {
@@ -28,20 +27,21 @@ const ShowSessions = () => {
 
     return (
         <div>
-            <ArrowBackIcon 
+            <ArrowBackIcon
                 className='back'
                 onClick={() => history(-1)}
                 aria-hidden="true"
             ></ArrowBackIcon>
             <div className="">
             {
-                sessions.map((session, index) => (
+                employees.map((employee, index) => (
                     <Card className="m-3 rounded shadow-lg" style={{ width: '22em' }}>
                     <Card.Body>
-                        <Card.Title>{session.name}</Card.Title>
-                        <Card.Text> {session.start_date} </Card.Text>
-                        <Card.Text> {session.end_date} </Card.Text>
-                        <Link className="btn btn-primary mr-2" to={`/postsessions/${session.id}`}>Full Detail</Link>
+                        <Card.Title>{employee.first_name}</Card.Title>
+                        <Card.Text> {employee.last_name} </Card.Text>
+                        <Card.Text> {employee.emp_no} </Card.Text>
+                        <Card.Text> {employee.hire_date} </Card.Text>
+                        <Link className="btn btn-primary mr-2" to={`/employee/${employee.emp_no}`}>Full Detail</Link>
                     </Card.Body>
                     </Card>
                 ))
@@ -51,4 +51,4 @@ const ShowSessions = () => {
     );
 };
 
-export default ShowSessions;
+export default ShowEmployees;
