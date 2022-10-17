@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bdcd96b-e52a-40b0-841c-1338330e4622" name="Changes" comment="Made Sessions Information link between Django (database) and React (front-end). Added functionality to New Session Page. Added Post-Session Overview page which currently contains all the sessions info - to be relocated in the next commit. Note might need to npm install axios - not sure if it saved in node_modules">
-      <change afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/AddEmployee.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/EmployeeDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/ShowEmployees.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/UpdateEmployee.js" afterDir="false" />
+    <list default="true" id="7bdcd96b-e52a-40b0-841c-1338330e4622" name="Changes" comment="Created components to add/show/update/delete employees and put it onto the employee page.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/DECO3801_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/DECO3801_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/accounts/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/api_events/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/api_events/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/AddSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/AddSession.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Employee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/ShowSessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/ShowSessions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/UpdateSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/UpdateSession.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js.LICENSE.txt" afterDir="false" />
     </list>
