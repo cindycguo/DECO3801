@@ -18,6 +18,8 @@ from django.urls import path, include
 from api_events.views import SessionView
 from accounts.views import EmployeeView
 from rest_framework import routers
+from django.conf import settings
+from django.conf.urls.static import static
 
 route = routers.DefaultRouter()
 route.register("sessions", SessionView, basename="sessionview")
@@ -30,4 +32,4 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path("accounts/", include("accounts.urls")),
     path('api/', include(route.urls)),
-]
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

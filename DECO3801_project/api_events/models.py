@@ -2,23 +2,24 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 import uuid
 
+
 # Create your models here.
 class Session(models.Model):
     """ Session Instance
     Includes subclasses: SessionStatus and SessionType.
     """
-    name = models.CharField(max_length=100, unique=True)                    # name of session
+    name = models.CharField(max_length=100, unique=True)  # name of session
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                           help_text='Unique ID for each session')
-    notes = models.CharField(max_length=1000, blank=True, null=True)        # notes associated with session
-
-    start_date = models.DateTimeField()                                     # start time of session
-    end_date = models.DateTimeField()                                       # end time of session
-    created_at = models.DateTimeField(auto_now_add=True)                    # when it was created
-    edited_at = models.DateTimeField(auto_now=True)                         # when it was last edited
+    notes = models.CharField(max_length=1000, blank=True, null=True)  # notes associated with session
+    recording = models.FileField(upload_to='uploads/videos', null=True, blank=True)
+    start_date = models.DateTimeField()  # start time of session
+    end_date = models.DateTimeField()  # end time of session
+    created_at = models.DateTimeField(auto_now_add=True)  # when it was created
+    edited_at = models.DateTimeField(auto_now=True)  # when it was last edited
 
     class Meta:
-        ordering = ['start_date']                                           # default ordering of sessions
+        ordering = ['start_date']  # default ordering of sessions
 
     class SessionStatus(models.TextChoices):
         """ Current status of session
@@ -63,18 +64,7 @@ class Session(models.Model):
     def __str__(self):
         return self.name
 
-                 
-
-   
-
-
-
-    
-       
-
-
     # Status Field
-
 
     def is_active(self):
         return self.status in {self.ACTIVE}

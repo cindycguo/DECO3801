@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bdcd96b-e52a-40b0-841c-1338330e4622" name="Changes" comment="Created components to add/show/update/delete employees and put it onto the employee page.">
+    <list default="true" id="7bdcd96b-e52a-40b0-841c-1338330e4622" name="Changes" comment="Added session history and upcoming components">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js.LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/DECO3801_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/DECO3801_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/DECO3801_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/DECO3801_project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/api_events/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/api_events/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/db.sqlite3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665667381787</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added session history and upcoming components">
+      <created>1665999095180</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665999095180</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +115,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added session functionality (basic timer for timestamp, record, screenshot / draw on canvas for pointer) and added a signup page." />
     <MESSAGE value="Added Employee and Supervisor in accounts folder. Employee model is linked to User model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Employee and Supervisor in accounts folder. Employee model is linked to User model" />
+    <MESSAGE value="Added session history and upcoming components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added session history and upcoming components" />
   </component>
 </project>
