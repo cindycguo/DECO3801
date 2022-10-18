@@ -10,11 +10,13 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/esm/Button';
 import Container from 'react-bootstrap/esm/Container';
 import SessionUpcoming from './SessionUpcoming';
-
+import {Routes, Route, useNavigate} from 'react-router-dom';
 
 function Home(props) {
 
   const [date, setDate] = useState(new Date()) 
+  const navigate = useNavigate();
+
 
   return (
 

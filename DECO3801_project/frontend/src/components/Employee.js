@@ -10,10 +10,10 @@ import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import ShowEmployees from './ShowEmployees';
 import AddEmployee from './AddEmployee';
-
+import {useState, useEffect} from 'react';
+import { useParams, useNavigate } from 'react-router';
 
 function Employee(props) {
-
   return (
     <ContentHolder>
       <Container style={{marginTop: "50px"}}>
@@ -28,49 +28,14 @@ function Employee(props) {
       <hr></hr>
 
       <Table striped>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>User ID</th>
-            <th>Employee</th>
-            <th>Session Name</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
+        
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td><Button>Edit</Button></td>
-            <td><Button>History</Button></td>
-            <td><Button>View Session</Button></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td><Button>Edit</Button></td>
-            <td><Button>History</Button></td>
-            <td><Button>View Session</Button></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>Thornton</td>
-            <td>@twitter</td>
-            <td><Button>Edit</Button></td>
-            <td><Button>History</Button></td>
-            <td><Button>View Session</Button></td>
-          </tr>
+          <ShowEmployees></ShowEmployees>
         </tbody>
+          
+  
+          
       </Table>
-
-      <ShowEmployees></ShowEmployees>
       <AddEmployee></AddEmployee>
       
       </Container>

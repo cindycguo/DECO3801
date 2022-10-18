@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
-import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/esm/Button';
 
 const ShowEmployees = () => {
 
@@ -26,28 +27,46 @@ const ShowEmployees = () => {
     }
 
     return (
+        <>
         <div>
             <ArrowBackIcon
                 className='back'
                 onClick={() => history(-1)}
                 aria-hidden="true"
             ></ArrowBackIcon>
+            
             <div className="">
+            <Table striped>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>User ID</th>
+                        <th>Employee</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+        
             {
                 employees.map((employee, index) => (
-                    <Card className="m-3 rounded shadow-lg" style={{ width: '22em' }}>
-                    <Card.Body>
-                        <Card.Title>{employee.first_name}</Card.Title>
-                        <Card.Text> {employee.last_name} </Card.Text>
-                        <Card.Text> {employee.emp_no} </Card.Text>
-                        <Card.Text> {employee.hire_date} </Card.Text>
-                        <Link className="btn btn-primary mr-2" to={`/employee/${employee.emp_no}`}>Full Detail</Link>
-                    </Card.Body>
-                    </Card>
+                    
+                    <tbody>
+                        <tr>
+                            <td>{employee.emp_no}</td>
+                            <td>{employee.first_name}</td>
+                            <td>{employee.last_name}</td>
+                            <td><Button>Edit</Button></td>
+                            <td><Button>History</Button></td>
+                            <td><Button>View Session</Button></td>
+                        </tr>
+                    </tbody>
                 ))
             }
+            </Table>
             </div>
         </div>
+        </>
     );
 };
 
