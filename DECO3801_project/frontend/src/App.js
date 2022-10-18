@@ -16,6 +16,7 @@ import ShowEmployees from './components/ShowEmployees';
 import AddEmployee from './components/AddEmployee';
 import UpdateEmployee from './components/UpdateEmployee';
 import EmployeeDetail from './components/EmployeeDetails';
+import UploadSessionRecording from './components/UploadSessionRecording';
 
 function App(props) {
     return (
@@ -27,11 +28,12 @@ function App(props) {
                 <Route path='/employee/:emp_no/update' element={<UpdateEmployee/>}/>
                 <Route path='/employee/:emp_no/' element={<EmployeeDetail/>}/>
                 <Route path='/notes' element={<Notes/>} />
-                <Route path='/sessions' element={<Sessions/>} />
-                <Route path='/newsessions' element={<NewSession/>} />
+                <Route exact path='/sessions' element={<Sessions/>} />
+                <Route exact path='/sessions/:id/' element={<SessionDetail/>} />
+                <Route exact path='/newsessions' element={<NewSession/>} />
+                <Route exact path='/newsessions/current/:id/' element={<Sessions/>} />
                 <Route exact path='/postsessions' element={<PostSessions/>} />
-                <Route exact path="/postsessions/:id/update" element={<UpdateSession/>} />
-                <Route exact path="/postsessions/:id/" element={<SessionDetail/>} />
+                <Route exact path="/sessions/:id/update" element={<UpdateSession/>} />
             </Routes>
 
         </Router>

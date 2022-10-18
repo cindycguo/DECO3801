@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import './css/Session.css'
@@ -55,7 +56,7 @@ const ShowSessions = () => {
                         <td>{session.start_date}</td>
                         <td>{session.end_date}</td>
                         <td><Button>Start</Button></td>
-                        <td><Button>Edit</Button></td>
+                        <td><Link to={`/postsessions/${session.id}`}>Edit</Link></td>
                     </tr>
                     </tbody>
                 ))

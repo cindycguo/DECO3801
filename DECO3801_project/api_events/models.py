@@ -11,6 +11,7 @@ class Session(models.Model):
     name = models.CharField(max_length=100, unique=True)  # name of session
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                           help_text='Unique ID for each session')
+    emp_name = models.CharField(max_length=100, default='')  # name of session
     notes = models.CharField(max_length=1000, blank=True, null=True)  # notes associated with session
     recording = models.FileField(upload_to='uploads/videos', null=True, blank=True)
     start_date = models.DateTimeField()  # start time of session

@@ -5,6 +5,7 @@ import { useParams, useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import './css/Session.css'
+import NoteContent from "./NoteContent";
 
 const SessionDetail = () => {
 
@@ -52,7 +53,7 @@ const SessionDetail = () => {
                     </div>
                 </div>
 
-                <Link className="btn btn-outline-primary mr-2" to={`/postsessions/${session.id}/update`}>Update</Link>
+                <Link className="btn btn-outline-primary mr-2" to={`/sessions/${session.id}/update`}>Update</Link>
                 <Link className="btn btn-danger" onClick={() => deleteUser(session.id)}>Delete</Link>
             </ContentHolder>
         </div>

@@ -51,8 +51,8 @@ const SessionUpcoming = () => {
                         <td>{session.name}</td>
                         <td>{session.start_date}</td>
                         <td>{session.end_date}</td>
-                        <td><Link to={`/sessions`}>Start</Link></td>
-                        <td><Link to={`/postsessions/${session.id}`}>Edit</Link></td>
+                        <td><Link to={`/newsessions/current/${session.id}/`}>Start</Link></td>
+                        <td><Link to={`/sessions/${session.id}`}>Edit</Link></td>
                     </tr>
                     </tbody>
                 ))

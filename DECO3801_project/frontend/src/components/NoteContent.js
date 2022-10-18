@@ -8,9 +8,21 @@ import NoteEdit from "./NoteEdit";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack';
+import axios from 'axios';
 
 function NoteContent() {
+const [session, setSession] = useState([])
 
+    useEffect(() => {
+        getSingleSession();
+    },[])
+
+
+    const getSingleSession = async () => {
+      const  { data } = await axios.get('http://127.0.0.1:8000/api/sessions/7233eb2b-f585-47d1-b3aa-12197d2a222c/')
+      console.log(data);
+      setSession(data);
+    }
   const [allNotes, setNotes] = useState([]);
   const [inputTitle, setInputTitle] = useState("")
   const [inputText, setInputText] = useState("");
@@ -109,7 +121,7 @@ function NoteContent() {
           saveHandler={saveHandler}
           cancelHandler={cancelHandler}
           titleHandler={titleHandler}
-          inputTitle={inputTitle}
+          inputTitle={session.notes}
           inputText={inputText}
         />
         {allNotes.filter((val) => {

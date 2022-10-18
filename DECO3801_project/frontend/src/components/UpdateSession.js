@@ -12,6 +12,7 @@ const UpdateSession = () => {
     const [name, setName] = useState(null)
     const [start_date, setStartDate] = useState(null)
     const [end_date, setEndDate] = useState(null)
+    const [recording, setRecording] = useState(null)
 
 
     useEffect(() => {
@@ -25,6 +26,7 @@ const UpdateSession = () => {
         setName(result.data.name);
         setStartDate(result.data.start_date);
         setEndDate(result.data.end_date);
+        setRecording(result.data.recording);
     }
 
     const updateSingleSession = async () => {
@@ -33,6 +35,8 @@ const UpdateSession = () => {
         formField.append('name',name)
         formField.append('start_date',start_date)
         formField.append('end_date',end_date)
+        formField.append('recording', recording)
+
 
         await axios({
             method: 'PUT',
@@ -40,7 +44,7 @@ const UpdateSession = () => {
             data: formField
         }).then(response => {
             console.log(response.data);
-            history.push("/");
+            this.prop.history.push("/");
         })
     }
 
@@ -63,6 +67,14 @@ const UpdateSession = () => {
                   name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="file"
+                  className="form-control form-control-lg"
+                  placeholder="Enter Your file"
+                  onChange={(e) => setRecording(e.target.files[0])}
                 />
               </div>
 

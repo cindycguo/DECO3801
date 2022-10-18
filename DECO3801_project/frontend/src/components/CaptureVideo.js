@@ -152,6 +152,9 @@ class CaptureVideo extends Component {
           var video = document.getElementById('recording');
           // e.data contains a blob representing the recording
           video.src = URL.createObjectURL(e.data);
+          var down = document.getElementById('down');
+          // e.data contains a blob representing the recording
+          down.href = URL.createObjectURL(e.data);
           video.play();
         }
 

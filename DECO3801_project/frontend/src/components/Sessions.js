@@ -12,7 +12,8 @@ function Sessions(props) {
         <p id="para"></p>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
         <VoiceRecog></VoiceRecog>
-        <video id="recording" controls width="320"></video><br/>
+        <video style={{display: 'none'}} id="recording" controls width="320"></video><br/>
+        <a id="down" download>test</a>
     </ContentHolder>
   );
 }
