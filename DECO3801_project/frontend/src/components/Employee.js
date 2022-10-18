@@ -20,22 +20,11 @@ function Employee(props) {
         <h1>Employees</h1>
       <hr></hr>
       <Row>
-        <Col><Button>All</Button></Col>
-        <Col><Button>Inactive sessions</Button></Col>
-        <Col><Button>Active sessions</Button></Col>
         <Col><Button>Add Employee</Button></Col>
       </Row>
       <hr></hr>
 
-      <Table striped>
-        
-        <tbody>
           <ShowEmployees></ShowEmployees>
-        </tbody>
-          
-  
-          
-      </Table>
       <AddEmployee></AddEmployee>
       
       </Container>

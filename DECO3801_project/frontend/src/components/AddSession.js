@@ -32,8 +32,6 @@ const AddSession = () => {
         <div className="container">
             <div className="container">
                 <div>
-                    <h2>Add New Session</h2>
-
                     <div className="form-group">
                         <input
                           type="text"

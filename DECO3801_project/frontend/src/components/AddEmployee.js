@@ -7,16 +7,16 @@ const AddEmployee = () => {
 
     let history = useNavigate();
 
+    const [emp_no, setEmpNo] = useState(null)
     const [first_name, setFirstName] = useState(null)
     const [last_name, setLastName] = useState(null)
-    const [hire_date, setHireDate] = useState(null)
 
 
     const addNewEmployee = async () => {
         let formField = new FormData()
+        formField.append('emp_no',emp_no)
         formField.append('first_name',first_name)
         formField.append('last_name',last_name)
-        formField.append('hire_date',hire_date)
 
         await axios({
           method: 'post',
@@ -33,6 +33,17 @@ const AddEmployee = () => {
             <div className="container">
                 <div>
                     <h2>Add New Employee</h2>
+
+                    <div className="form-group">
+                        <input
+                          type="number"
+                          className="form-control form-control-lg"
+                          placeholder="Enter Employee ID (not required)"
+                          name="emp_no"
+                          value={emp_no}
+                          onChange={(e) => setEmpNo(e.target.value)}
+                        />
+                    </div>
 
                     <div className="form-group">
                         <input
@@ -53,16 +64,6 @@ const AddEmployee = () => {
                           name="last_name"
                           value={last_name}
                           onChange={(e) => setLastName(e.target.value)}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                          type="datetime"
-                          className="form-control form-control-lg"
-                          placeholder="Enter Your hire date"
-                          name="hire_date"
-                          value={hire_date}
-                          onChange={(e) => setHireDate(e.target.value)}
                         />
                     </div>
                     <button className="btn btn-primary btn-block" onClick={addNewEmployee}>Add Employee</button>

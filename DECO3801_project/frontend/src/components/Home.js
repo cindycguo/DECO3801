@@ -27,11 +27,10 @@ function Home(props) {
         <hr></hr>
         <Table striped>
         <tbody>
-          <ShowSessions></ShowSessions>
+          <SessionUpcoming></SessionUpcoming>
         </tbody>
         </Table>
         <hr></hr>
-        <SessionUpcoming></SessionUpcoming>
         <h1 className='calenderTitle'> My Calender </h1>
         <div className="calendar-container">
           <Calendar onChange={setDate} value={date}/>

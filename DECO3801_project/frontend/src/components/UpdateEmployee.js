@@ -10,7 +10,6 @@ const UpdateEmployee = () => {
 
     const [first_name, setFirstName] = useState(null)
     const [last_name, setLastName] = useState(null)
-    const [hire_date, setHireDate] = useState(null)
 
 
     useEffect(() => {
@@ -19,11 +18,9 @@ const UpdateEmployee = () => {
 
     let loadEmployees = async () => {
         const result = await axios.get(`http://127.0.0.1:8000/api/employees/${emp_no}`);
-        console.log(result.data.name);
 
-        setName(result.data.first_name);
-        setStartDate(result.data.last_name);
-        setEndDate(result.data.hire_date);
+        setFirstName(result.data.first_name);
+        setLastName(result.data.last_name);
     }
 
     const updateSingleEmployee = async () => {
@@ -31,7 +28,6 @@ const UpdateEmployee = () => {
 
         formField.append('first_name',first_name)
         formField.append('last_name',last_name)
-        formField.append('hire_date',hire_date)
 
         await axios({
             method: 'PUT',
@@ -73,17 +69,6 @@ const UpdateEmployee = () => {
                   name="last_name"
                   value={last_name}
                   onChange={(e) => setLastName(e.target.value)}
-                />
-              </div>
-
-              <div className="form-group">
-                <input
-                  type="datetime"
-                  className="form-control form-control-lg"
-                  placeholder="Enter Your Hire Date"
-                  name="hire_date"
-                  value={hire_date}
-                  onChange={(e) => setHireDate(e.target.value)}
                 />
               </div>
               <button onClick={updateSingleEmployee}>Update Employee</button>

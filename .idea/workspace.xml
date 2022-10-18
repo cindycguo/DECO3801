@@ -4,14 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bdcd96b-e52a-40b0-841c-1338330e4622" name="Changes" comment="Added a recording field to the session model and a component which allows for Recording files to be uploaded to the database (to be added to session page).">
+    <list default="true" id="7bdcd96b-e52a-40b0-841c-1338330e4622" name="Changes" comment="Put content onto correct pages and added some voice command functions.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/DECO3801_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/DECO3801_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/DECO3801_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/DECO3801_project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/accounts/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/api_events/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/api_events/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/AddEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/AddEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/AddSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/AddSession.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Employee.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Newsession.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Newsession.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionHistory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionUpcoming.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionUpcoming.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/VoiceRecog.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/VoiceRecog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/ShowEmployees.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/ShowEmployees.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/UpdateEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/UpdateEmployee.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js.LICENSE.txt" afterDir="false" />
     </list>
@@ -35,6 +45,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

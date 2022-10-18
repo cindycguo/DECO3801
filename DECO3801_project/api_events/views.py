@@ -29,12 +29,6 @@ def showAllSessions(request):
     serilizer = SessionSerializer(sessions, many=True)
     return Response(serilizer.data)
 
-@api_view(['GET'])
-def showAllSessions(request):
-
-    permisions = Permission.objects.all()
-    serilizer = SessionSerializer(permisions, many=True)
-    return Response(serilizer.data)
 
 @api_view(['GET'])
 def showSingleSession(request, pk):

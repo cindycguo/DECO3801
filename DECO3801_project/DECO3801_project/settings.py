@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'api_events.apps.ApiEventsConfig',
     'frontend.apps.FrontendConfig',
-    'accounts',
+    'accounts.apps.AccountsConfig',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

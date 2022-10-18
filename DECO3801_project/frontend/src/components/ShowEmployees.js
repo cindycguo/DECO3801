@@ -32,11 +32,6 @@ const ShowEmployees = () => {
     return (
         <>
         <div>
-            <ArrowBackIcon
-                className='back'
-                onClick={() => history(-1)}
-                aria-hidden="true"
-            ></ArrowBackIcon>
             
             <div className="">
             <Table striped>
@@ -58,7 +53,7 @@ const ShowEmployees = () => {
                             <td>{employee.emp_no}</td>
                             <td>{employee.first_name}</td>
                             <td>{employee.last_name}</td>
-                            <td><Button>Edit</Button></td>
+                            <td><Link to={`/employee/${employee.emp_no}/update`}>Edit</Link></td>
                             <td><Button>History</Button></td>
                             <td>
                                 <Button variant="primary" onClick={() => setModalShow(true)}>View Session</Button>
@@ -97,7 +92,7 @@ function MyVerticallyCenteredModal(props) {
           </p >
         </Modal.Body>
         <Modal.Footer>
-          <Button>Yes</Button>
+          <Link to={`/sessions`}>Yes</Link>
           <Button onClick={props.onHide}>No</Button>
         </Modal.Footer>
         

@@ -22,8 +22,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 route = routers.DefaultRouter()
-route.register("sessions", SessionView, basename="sessionview")
 route.register("employees", EmployeeView, basename="employeeview")
+route.register("sessions", SessionView, basename="sessionview")
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
