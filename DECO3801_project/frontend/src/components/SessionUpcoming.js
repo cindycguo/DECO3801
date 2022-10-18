@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-const ShowSessions = () => {
+const SessionUpcoming = () => {
 
     const [sessions, setSessions] = useState([])
     const history = useNavigate();
@@ -13,7 +13,7 @@ const ShowSessions = () => {
     const fetchSessions = async () => {
         const result = await axios.get('http://localhost:8000/api/sessions/');
 
-        result.data = result.data.filter(item => !(item.status == "ACT"));
+        result.data = result.data.filter(item => (item.status == "ACT"));
         console.log(result.data)
         setSessions(result.data)
     }
@@ -51,4 +51,4 @@ const ShowSessions = () => {
     );
 };
 
-export default ShowSessions;
+export default SessionUpcoming;

@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/esm/Button';
 import Container from 'react-bootstrap/esm/Container';
+import SessionUpcoming from './SessionUpcoming';
 
 
 function Home(props) {
@@ -60,6 +61,7 @@ function Home(props) {
           </tbody>
         </Table>
         <hr></hr>
+        <SessionUpcoming></SessionUpcoming>
         <h1 className='calenderTitle'> My Calender </h1>
         <div className="calendar-container">
           <Calendar onChange={setDate} value={date}/>
