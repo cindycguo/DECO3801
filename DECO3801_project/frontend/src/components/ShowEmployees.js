@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/esm/Button';
+import Modal from 'react-bootstrap/Modal';
 
 const ShowEmployees = () => {
 
@@ -25,6 +26,8 @@ const ShowEmployees = () => {
     const goToDetail = () => {
         alert("detail page")
     }
+
+    const [modalShow, setModalShow] = React.useState(false);
 
     return (
         <>
@@ -50,7 +53,6 @@ const ShowEmployees = () => {
         
             {
                 employees.map((employee, index) => (
-                    
                     <tbody>
                         <tr>
                             <td>{employee.emp_no}</td>
@@ -58,7 +60,10 @@ const ShowEmployees = () => {
                             <td>{employee.last_name}</td>
                             <td><Button>Edit</Button></td>
                             <td><Button>History</Button></td>
-                            <td><Button>View Session</Button></td>
+                            <td>
+                                <Button variant="primary" onClick={() => setModalShow(true)}>View Session</Button>
+                                <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)}/>
+                            </td>
                         </tr>
                     </tbody>
                 ))
@@ -69,5 +74,35 @@ const ShowEmployees = () => {
         </>
     );
 };
+
+function MyVerticallyCenteredModal(props) {
+  
+
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Starting Sessions
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Do you want to start the Sessions</h4>
+          <p>
+            some info
+          </p >
+        </Modal.Body>
+        <Modal.Footer>
+          <Button>Yes</Button>
+          <Button onClick={props.onHide}>No</Button>
+        </Modal.Footer>
+        
+      </Modal>
+    );
+}
 
 export default ShowEmployees;

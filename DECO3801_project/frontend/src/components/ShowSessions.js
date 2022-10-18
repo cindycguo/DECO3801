@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
-import { Card, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import './css/Session.css'
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/esm/Button';
 
 const ShowSessions = () => {
 
@@ -27,6 +27,7 @@ const ShowSessions = () => {
     }
 
     return (
+        <>
         <div>
             <ArrowBackIcon 
                 className='back'
@@ -34,20 +35,35 @@ const ShowSessions = () => {
                 aria-hidden="true"
             ></ArrowBackIcon>
             <div className="">
+                <Table striped>
+                    <thead>
+                        <tr>
+                            <th>Session</th>
+                            <th>Time</th>
+                            <th>Date</th>
+                            <th>Employee</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
             {
                 sessions.map((session, index) => (
-                    <Card className="m-3 rounded shadow-lg" style={{ width: '22em' }}>
-                    <Card.Body>
-                        <Card.Title>{session.name}</Card.Title>
-                        <Card.Text> {session.start_date} </Card.Text>
-                        <Card.Text> {session.end_date} </Card.Text>
-                        <Link className="btn btn-primary mr-2" to={`/postsessions/${session.id}`}>Full Detail</Link>
-                    </Card.Body>
-                    </Card>
+                    <tbody>
+                    <tr>
+                        <td>{session.name}</td>
+                        <td>{session.start_date}</td>
+                        <td>{session.end_date}</td>
+                        <td><Button>Start</Button></td>
+                        <td><Button>Edit</Button></td>
+                    </tr>
+                    </tbody>
                 ))
             }
+            </Table>
             </div>
         </div>
+        </>
     );
 };
 

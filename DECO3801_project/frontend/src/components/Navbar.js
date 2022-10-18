@@ -99,7 +99,7 @@ function Navbar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            <Link to='/'> <img src={"/static/images/logo6.png"} alt="Show Me the Mud"/></Link>
+            <Link to='/'> <img src={"/static/images/logo.png"} height="60" alt="Show Me the Mud"/></Link>
           </Typography>
         </Toolbar>
       </AppBar>
