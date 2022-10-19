@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bdcd96b-e52a-40b0-841c-1338330e4622" name="Changes" comment="Fixed most of the major style errors">
+    <list default="true" id="7bdcd96b-e52a-40b0-841c-1338330e4622" name="Changes" comment="Honestly dont even know at this point">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/api_events/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/api_events/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/CaptureVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/CaptureVideo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/NoteContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/NoteContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Navbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/PostSessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/PostSessions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionHistory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionUpcoming.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/SessionUpcoming.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Sessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/Sessions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/ShowSessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/ShowSessions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/UpdateSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/src/components/UpdateSession.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DECO3801_project/frontend/static/frontend/main.js.LICENSE.txt" afterDir="false" />
     </list>
@@ -61,7 +59,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DECO3801_project/frontend/src/components" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mitch\Documents\GitHub\DECO3801\DECO3801_project\frontend\src\components" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -110,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666103009425</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Honestly dont even know at this point">
+      <created>1666134345042</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666134345042</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +152,7 @@
     <MESSAGE value="Added Employee and Supervisor in accounts folder. Employee model is linked to User model" />
     <MESSAGE value="Added session history and upcoming components" />
     <MESSAGE value="Fixed most of the major style errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed most of the major style errors" />
+    <MESSAGE value="Honestly dont even know at this point" />
+    <option name="LAST_COMMIT_MESSAGE" value="Honestly dont even know at this point" />
   </component>
 </project>

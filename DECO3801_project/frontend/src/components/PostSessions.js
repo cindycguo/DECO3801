@@ -5,7 +5,7 @@ import ShowSessions from './ShowSessions';
 import AddSession from './AddSession';
 import SessionDetail from './SessionDetails';
 import NoteContent from "./NoteContent";
-import UploadSessionRecording from './UploadSessionRecording';
+import UpdateSessionNote from './UpdateSessionNote';
 
 
 function PostSessions(props) {
@@ -14,8 +14,7 @@ function PostSessions(props) {
 
     <ContentHolder>
       <h1 className="header">Post-Session Review</h1>
-      <ShowSessions></ShowSessions>
-      <NoteContent />
+      <UpdateSessionNote></UpdateSessionNote>
     </ContentHolder>
   );
 }

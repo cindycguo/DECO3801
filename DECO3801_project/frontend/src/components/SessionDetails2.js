@@ -1,14 +1,16 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import ContentHolder from './Content';
+import CaptureVideo from './CaptureVideo';
+import VoiceRecog from './VoiceRecog';
 import { useParams, useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import './css/Session.css'
 import NoteContent from "./NoteContent";
+import UpdateSessionNote from "./UpdateSessionNote";
 
-const SessionDetail = () => {
-
+const SessionDetail2 = () => {
     const [session, setSession] = useState([])
 
     const {id} = useParams();
@@ -27,17 +29,11 @@ const SessionDetail = () => {
 
     }
 
-    const deleteUser = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/sessions/${id}/`)
-        history.push("/")
-    }
-
-
 
     return (
         <div>
             <ContentHolder>
-                <h2>Detail of Single Session </h2>
+                <h2>Single Session {session.name}</h2>
                 <hr></hr>
                 <ArrowBackIcon 
                     className='back'
@@ -46,18 +42,20 @@ const SessionDetail = () => {
                 ></ArrowBackIcon>
                 <div>
                     <div>
-                        <p>{session.id}</p>
-                        <p>{session.name}</p>
-                        <p>{session.start_date}</p>
-                        <p>{session.end_date}</p>
                     </div>
                 </div>
+                <CaptureVideo></CaptureVideo>
+                <Link to={`/postsessions/${session.id}`}>End Session</Link>
+                <p id="para"></p>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+                <VoiceRecog></VoiceRecog>
+                <video style={{display: 'none'}} id="recording" controls width="320"></video><br/>
+                <a id="down" download>test</a>
 
-                <Link className="btn btn-outline-primary mr-2" to={`/newsessions/${session.id}/update`}>Update</Link>
-                <Link className="btn btn-danger" onClick={() => deleteUser(session.id)}>Delete</Link>
+                <UpdateSessionNote></UpdateSessionNote>
             </ContentHolder>
         </div>
     );
 };
 
-export default SessionDetail;
+export default SessionDetail2;

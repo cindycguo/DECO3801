@@ -306,7 +306,7 @@ class CaptureVideo extends Component {
                     })
                   }
                 </div>
-                <Link to='/postsessions'>End Session</Link>
+                <Link to='/postsessions/'>End Session</Link>
             </div>
 
             </center>

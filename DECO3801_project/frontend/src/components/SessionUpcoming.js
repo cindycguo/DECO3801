@@ -52,7 +52,7 @@ const SessionUpcoming = () => {
                         <td>{session.start_date}</td>
                         <td>{session.end_date}</td>
                         <td><Link to={`/newsessions/current/${session.id}/`}>Start</Link></td>
-                        <td><Link to={`/sessions/${session.id}`}>Edit</Link></td>
+                        <td><Link to={`/newsessions/${session.id}`}>Edit</Link></td>
                     </tr>
                     </tbody>
                 ))

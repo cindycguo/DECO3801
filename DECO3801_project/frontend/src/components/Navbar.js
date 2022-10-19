@@ -56,13 +56,6 @@ function Navbar(props) {
           </ListItemIcon>
           <ListItemText primary={"Notes"} />
         </ListItem>
-
-        <ListItem component={Link} to='/sessions' button key={"4"} selected={'/sessions' === path}>
-          <ListItemIcon>
-            <ScheduleIcon />
-          </ListItemIcon>
-          <ListItemText primary={"Sessions"} />
-        </ListItem>
         <ListItem component={Link} to='/newsessions' button key={"5"} selected={'/newsessions' === path}>
           <ListItemIcon>
             <ScheduleIcon />
