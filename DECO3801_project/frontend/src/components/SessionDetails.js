@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import './css/Session.css'
 import NoteContent from "./NoteContent";
+import Table from 'react-bootstrap/Table';
 
 const SessionDetail = () => {
 
@@ -44,14 +45,24 @@ const SessionDetail = () => {
                     onClick={() => history(-1)}
                     aria-hidden="true"
                 ></ArrowBackIcon>
-                <div>
-                    <div>
-                        <p>{session.id}</p>
-                        <p>{session.name}</p>
-                        <p>{session.start_date}</p>
-                        <p>{session.end_date}</p>
-                    </div>
-                </div>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th>Session ID</th>
+                            <th>Session Name</th>
+                            <th>Statr Date</th>
+                            <th>End Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{session.id}</td>
+                            <td>{session.name}</td>
+                            <td>{session.start_date}</td>
+                            <td>{session.end_date}</td>
+                        </tr>
+                    </tbody>
+                </Table>
 
                 <Link className="btn btn-outline-primary mr-2" to={`/newsessions/${session.id}/update`}>Update</Link>
                 <Link className="btn btn-danger" onClick={() => deleteUser(session.id)}>Delete</Link>
