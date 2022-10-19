@@ -16,6 +16,7 @@ import TodayIcon from "@mui/icons-material/Today";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import HomeIcon from "@mui/icons-material/Home";
 import LanguageIcon from "@mui/icons-material/Language";
+import Button from 'react-bootstrap/esm/Button';
 
 // Adapted from CBI Analytics React tutorial
 
@@ -26,53 +27,79 @@ function Navbar(props) {
   const location = useLocation();
   const path = location.pathname
 
-
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const drawer = (
-    <div>
-      <Toolbar />
+  // declare for supervisor
+  let drawer = (
+        <div>
+          <Toolbar />
 
-      <List>
-        <ListItem component={Link} to='/' button key={"1"} selected={'/' === path}>
-          <ListItemIcon>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText primary={"Home"} />
-        </ListItem>
-        
-        <ListItem component={Link} to='/employee' button key={"2"} selected={'/employee' === path}>
-          <ListItemIcon>
-            <TodayIcon />
-          </ListItemIcon>
-          <ListItemText primary={"Employee"} />
-        </ListItem>
+          <List>
+            <ListItem component={Link} to='/' button key={"1"} selected={'/' === path}>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Home"} />
+            </ListItem>
 
-        <ListItem component={Link} to='/notes' button key={"3"} selected={'/notes' === path}>
-          <ListItemIcon>
-            <TodayIcon />
-          </ListItemIcon>
-          <ListItemText primary={"Notes"} />
-        </ListItem>
+            <ListItem component={Link} to='/notes' button key={"3"} selected={'/notes' === path}>
+              <ListItemIcon>
+                <TodayIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Notes"} />
+            </ListItem>
+            <ListItem component={Link} to='/newsessions' button key={"5"} selected={'/newsessions' === path}>
+              <ListItemIcon>
+                <ScheduleIcon />
+              </ListItemIcon>
+              <ListItemText primary={"New Sessions"} />
+            </ListItem>
+            <p class="logout-wrap"><a href="accounts/logout"><Button>Log Out</Button></a></p>
+          </List>
+        </div>
+      );
 
-        <ListItem component={Link} to='/sessions' button key={"4"} selected={'/sessions' === path}>
-          <ListItemIcon>
-            <ScheduleIcon />
-          </ListItemIcon>
-          <ListItemText primary={"Sessions"} />
-        </ListItem>
-        <ListItem component={Link} to='/newsessions' button key={"5"} selected={'/newsessions' === path}>
-          <ListItemIcon>
-            <ScheduleIcon />
-          </ListItemIcon>
-          <ListItemText primary={"New Sessions"} />
-        </ListItem>
-        <p class="logout-wrap"><a href="accounts/logout" class="logout">Log Out</a></p>
-      </List>
-    </div>
-  );
+  // check if employee
+  if (user) {
+
+      drawer = (
+        <div>
+          <Toolbar />
+
+          <List>
+            <ListItem component={Link} to='/' button key={"1"} selected={'/' === path}>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Home"} />
+            </ListItem>
+
+            <ListItem component={Link} to='/employee' button key={"2"} selected={'/employee' === path}>
+              <ListItemIcon>
+                <TodayIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Employee"} />
+            </ListItem>
+            <ListItem component={Link} to='/notes' button key={"3"} selected={'/notes' === path}>
+              <ListItemIcon>
+                <TodayIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Notes"} />
+            </ListItem>
+
+            <ListItem component={Link} to='/newsessions' button key={"5"} selected={'/newsessions' === path}>
+              <ListItemIcon>
+                <ScheduleIcon />
+              </ListItemIcon>
+              <ListItemText primary={"New Sessions"} />
+            </ListItem>
+            <p class="logout-wrap"><a href="accounts/logout"><Button>Log Out</Button></a></p>
+          </List>
+        </div>
+      );
+  }
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -99,7 +126,7 @@ function Navbar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            <Link to='/'> <img src={"/static/images/logo6.png"} alt="Show Me the Mud"/></Link>
+            <Link to='/'> <img src={"/static/images/logo.png"} height="60" alt="Show Me the Mud"/></Link>
           </Typography>
         </Toolbar>
       </AppBar>

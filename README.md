@@ -4,10 +4,12 @@ DECO3801 show me the mud
 Must have Node.js installed!
 
 Dependencies required:
-Annyang 
-PeerJS
-uuidv4
-react-calendar 
+* Annyang 
+* PeerJS
+* uuidv4
+* react-calendar 
+
+Modules: wsproto, django-cors-headers
 
 To run the site, open 2 terminals up.
 

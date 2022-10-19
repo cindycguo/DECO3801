@@ -9,11 +9,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/esm/Button';
 import Container from 'react-bootstrap/esm/Container';
-
+import SessionUpcoming from './SessionUpcoming';
+import {Routes, Route, useNavigate} from 'react-router-dom';
+import ShowSessions from './ShowSessions';
 
 function Home(props) {
 
   const [date, setDate] = useState(new Date()) 
+  const navigate = useNavigate();
+
 
   return (
 
@@ -22,42 +26,9 @@ function Home(props) {
         <h1> Upcoming Sessions </h1>
         <hr></hr>
         <Table striped>
-          <thead>
-            <tr>
-              <th>Session</th>
-              <th>Time</th>
-              <th>Date</th>
-              <th>Employee</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td><Button>Start</Button></td>
-              <td><Button>Edit</Button></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td><Button>Start</Button></td>
-              <td><Button>Edit</Button></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Larry the Bird</td>
-              <td>Thornton</td>
-              <td>@twitter</td>
-              <td><Button>Start</Button></td>
-              <td><Button>Edit</Button></td>
-            </tr>
-          </tbody>
+        <tbody>
+          <SessionUpcoming></SessionUpcoming>
+        </tbody>
         </Table>
         <hr></hr>
         <h1 className='calenderTitle'> My Calender </h1>

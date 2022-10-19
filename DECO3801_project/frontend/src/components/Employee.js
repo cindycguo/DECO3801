@@ -3,78 +3,71 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import ContentHolder from './Content';
 import "bootstrap/dist/css/bootstrap.min.css";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
+import ShowEmployees from './ShowEmployees';
+import AddEmployee from './AddEmployee';
+import {useState, useEffect} from 'react';
+import { useParams, useNavigate } from 'react-router';
 
-
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  var btn = document.getElementById("mybtn");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    btn.innerHTML = 'Close Employee Creation';
+  } else {
+    x.style.display = "none";
+    btn.innerHTML = 'Add Employee';
+  }
+}
 
 function Employee(props) {
 
-  return (
-    <ContentHolder>
-      <Container style={{marginTop: "50px"}}>
-        <h1>Employees</h1>
-      <hr></hr>
-      <Row>
-        <Col><Button>All</Button></Col>
-        <Col><Button>Inactive sessions</Button></Col>
-        <Col><Button>Active sessions</Button></Col>
-        <Col><Button>Add Employee</Button></Col>
-      </Row>
-      <hr></hr>
-    
+  const history = useNavigate();
+  if (user) {
+      return (
+        <ContentHolder>
+          <Container style={{marginTop: "50px"}}>
+            <h1>Employees</h1>
+          <hr></hr>
+          <Row>
+            <Col><Button id='mybtn' onClick={myFunction}>Add Employee</Button></Col>
+          </Row>
+          <Row>
+            <Col>
+                <div id="myDIV" style={{display: "none", marginTop: "20px"}}>
+                    <AddEmployee></AddEmployee>
+                </div>
+            </Col>
+          </Row>
+          <hr></hr>
+              <ShowEmployees></ShowEmployees>
+          </Container>
+        </ContentHolder>
 
+      );
+  } else {
+    return (
+        <ContentHolder>
+          <Container style={{marginTop: "50px"}}>
+            <ArrowBackIcon
+                    className='back'
+                    onClick={() => history(-1)}
+                    aria-hidden="true"
+                ></ArrowBackIcon>
+            <h1>Whoops!</h1>
+            <p>Sorry, it appears as though your user permissions do not allow for this page to be loaded!</p>
+            <p>Please follow the undo button to return to the regular web app.</p>
+          </Container>
+        </ContentHolder>
 
-      <Table striped>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>User ID</th>
-            <th>Employee</th>
-            <th>Session Name</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td><Button>Eidt</Button></td>
-            <td><Button>History</Button></td>
-            <td><Button>Vie Session</Button></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td><Button>Eidt</Button></td>
-            <td><Button>History</Button></td>
-            <td><Button>Vie Session</Button></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry the Bird</td>
-            <td>Thornton</td>
-            <td>@twitter</td>
-            <td><Button>Eidt</Button></td>
-            <td><Button>History</Button></td>
-            <td><Button>Vie Session</Button></td>
-          </tr>
-        </tbody>
-      </Table>
-      
-      </Container>
-    </ContentHolder>
-    
-  );
+      );
+  }
 }
 
 Employee.propTypes = {
