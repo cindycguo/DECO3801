@@ -51,7 +51,7 @@ const SessionHistory = () => {
                         <td>{session.name}</td>
                         <td>{session.start_date}</td>
                         <td>{session.end_date}</td>
-                        <td><Link to={`/newsessions/${session.id}`}>View</Link></td>
+                        <td><Link to={`/newsessions/${session.id}`}><Button>View</Button></Link></td>
                     </tr>
                     </tbody>
                 ))

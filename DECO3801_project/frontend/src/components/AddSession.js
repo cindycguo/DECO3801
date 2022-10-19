@@ -42,7 +42,7 @@ const AddSession = () => {
                           onChange={(e) => setName(e.target.value)}
                         />
                     </div>
-
+                    <br></br>
                     <div className="form-group">
                         <input
                           type="datetime"
@@ -53,6 +53,7 @@ const AddSession = () => {
                           onChange={(e) => setStartDate(e.target.value)}
                         />
                     </div>
+                    <br></br>
                     <div className="form-group">
                         <input
                           type="datetime"
@@ -63,6 +64,7 @@ const AddSession = () => {
                           onChange={(e) => setEndDate(e.target.value)}
                         />
                     </div>
+                    <br></br>
                     <button className="btn btn-primary btn-block" onClick={addNewSession}>Add Session</button>
                 </div>
             </div>

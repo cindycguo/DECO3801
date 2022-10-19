@@ -33,7 +33,7 @@ const AddEmployee = () => {
             <div className="container">
                 <div>
                     <h2>Add New Employee</h2>
-
+                    <br></br>
                     <div className="form-group">
                         <input
                           type="number"
@@ -44,7 +44,7 @@ const AddEmployee = () => {
                           onChange={(e) => setEmpNo(e.target.value)}
                         />
                     </div>
-
+                    <br></br>
                     <div className="form-group">
                         <input
                           type="text"
@@ -55,7 +55,7 @@ const AddEmployee = () => {
                           onChange={(e) => setFirstName(e.target.value)}
                         />
                     </div>
-
+                    <br></br>
                     <div className="form-group">
                         <input
                           type="text"
@@ -66,6 +66,7 @@ const AddEmployee = () => {
                           onChange={(e) => setLastName(e.target.value)}
                         />
                     </div>
+                    <br></br>
                     <button className="btn btn-primary btn-block" onClick={addNewEmployee}>Add Employee</button>
                 </div>
             </div>

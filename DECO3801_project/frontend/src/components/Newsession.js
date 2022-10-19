@@ -31,7 +31,7 @@ function NewSession(props) {
           <SessionHistory></SessionHistory>
         </tbody>
         </Table>
-        <button id='mybtn' onClick={myFunction}>Add Session</button>
+        <Button id='mybtn' onClick={myFunction}>Add Session</Button>
 
         <div id="myDIV" style={{display: "none"}}>
           <h1>Add New Session</h1>

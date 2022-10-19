@@ -25,7 +25,7 @@ function Employee(props) {
       <hr></hr>
 
           <ShowEmployees></ShowEmployees>
-      <AddEmployee></AddEmployee>
+          <AddEmployee></AddEmployee>
       
       </Container>
     </ContentHolder>
