@@ -11,18 +11,20 @@ import Stack from 'react-bootstrap/Stack';
 import axios from 'axios';
 
 function NoteContent() {
-const [session, setSession] = useState([])
+const [sessions, setSessions] = useState([])
 
     useEffect(() => {
-        getSingleSession();
+        fetchSessions();
     },[])
 
 
-    const getSingleSession = async () => {
-      const  { data } = await axios.get('http://127.0.0.1:8000/api/sessions/7233eb2b-f585-47d1-b3aa-12197d2a222c/')
-      console.log(data);
-      setSession(data);
-    }
+    const fetchSessions = async () => {
+      const result = await axios.get('http://localhost:8000/api/sessions/');
+
+      console.log(result.data)
+      setSessions(result.data)
+  }
+
   const [allNotes, setNotes] = useState([]);
   const [inputTitle, setInputTitle] = useState("")
   const [inputText, setInputText] = useState("");
@@ -124,6 +126,18 @@ const [session, setSession] = useState([])
           inputTitle={inputTitle}
           inputText={inputText}
         />
+        {sessions.filter((val) => {
+          if (val.notes != null) {
+            return val;
+          } 
+        }).map((session, index) => (
+          <Note
+          title={session.notes}
+          text={session.notes}
+          deleteNote={deleteNote}
+          editHandler={editHandler}
+        ></Note>
+                ))}
         {allNotes.filter((val) => {
           if (searchTerm == "") {
             return val

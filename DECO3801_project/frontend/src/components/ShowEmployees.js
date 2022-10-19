@@ -37,7 +37,7 @@ const ShowEmployees = () => {
             <Table striped>
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>Session ID</th>
                         <th>User ID</th>
                         <th>Employee</th>
                         <th></th>
