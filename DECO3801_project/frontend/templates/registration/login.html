@@ -5,15 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <div class = "background-img">
-    {% load static %}
-    <img src = "{% static 'css/jellyfish.jpg' %}" alt = "jellyfishes swimming :D">
-  </div>
-
-  <div class = login-form>
+  <div class = "login-form">
     {% block content %}
 
     {% if form.errors %}
@@ -29,24 +24,31 @@
       {% endif %}
     {% endif %}
 
-    <h2 id = "login"> Log In</h2>
+    <h1>Login</h1>
 
     <form method="post" action="{% url 'login' %}" class = "sign-in">
       {% csrf_token %}
       <table>
         <tr>
-          <td placeholder="username">{{ form.username }}</td>
+          <td placeholder="username">{{ form.username }}
+          <span></span>
+          <label>Username</label>
+          </td>
         </tr>
         <tr>
-          <td placeholder = "password">{{ form.password }}</td>
+          <td placeholder = "password">{{ form.password }}
+          <span></span>
+          <label>Password</label>
+          </td>
         </tr>
       </table>
-      <input type="submit" value="login" class = "custom-button">
-      <input type="hidden" name="next" value="{{ next }}">
+      <div><input type="submit" value="login" class = "login-button"></div>
+      <div class="signup"><a href="#">Sign up!</a></div>
+      <div class="forgor"><a href="{% url 'password_reset' %}">Forgot password?</a></div>
+      
     </form>
 
-    {# Assumes you setup the password_reset view in your URLconf #}
-    <p><a href="{% url 'password_reset' %}">Forgot password?</a></p>
+    
 
     {% endblock %}
   </div>
