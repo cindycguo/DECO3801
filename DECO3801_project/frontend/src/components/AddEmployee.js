@@ -32,7 +32,7 @@ const AddEmployee = () => {
         <div className="container">
             <div className="container">
                 <div>
-                    <h2>Add New Employee</h2>
+                    <h4>Add New Employee</h4>
 
                     <div className="form-group">
                         <input

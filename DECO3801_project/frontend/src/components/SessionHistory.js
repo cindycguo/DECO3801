@@ -47,12 +47,12 @@ const SessionHistory = () => {
             {
                 sessions.map((session, index) => (
                     <tbody>
-                    <tr>
-                        <td>{session.name}</td>
-                        <td>{session.start_date}</td>
-                        <td>{session.end_date}</td>
-                        <td><Link to={`/newsessions/${session.id}`}>View</Link></td>
-                    </tr>
+                        <tr>
+                            <td>{session.name}</td>
+                            <td>{session.start_date}</td>
+                            <td>{session.end_date}</td>
+                            <td><Link to={`/newsessions/${session.id}`}><Button>View</Button></Link></td>
+                        </tr>
                     </tbody>
                 ))
             }

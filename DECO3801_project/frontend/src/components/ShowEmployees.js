@@ -53,7 +53,7 @@ const ShowEmployees = () => {
                             <td>{employee.emp_no}</td>
                             <td>{employee.first_name}</td>
                             <td>{employee.last_name}</td>
-                            <td><Link to={`/employee/${employee.emp_no}/update`}>Edit</Link></td>
+                            <td><Link to={`/employee/${employee.emp_no}/update`}><Button>Edit</Button></Link></td>
                             <td><Button>History</Button></td>
                             <td>
                                 <Button variant="primary" onClick={() => setModalShow(true)}>View Session</Button>

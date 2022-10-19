@@ -121,7 +121,7 @@ const [session, setSession] = useState([])
           saveHandler={saveHandler}
           cancelHandler={cancelHandler}
           titleHandler={titleHandler}
-          inputTitle={session.notes}
+          inputTitle={inputTitle}
           inputText={inputText}
         />
         {allNotes.filter((val) => {
