@@ -8,6 +8,7 @@ Dependencies required:
 * PeerJS
 * uuidv4
 * react-calendar 
+* axios
 
 Modules: wsproto, django-cors-headers
 
@@ -24,3 +25,6 @@ This will run the React side of the application.
 
 To see the live web app, follow the link displayed on the first terminal:
 http://127.0.0.1:8000/
+
+NOTE*****
+In order to test this on two different computers, you need to be connected to the same network because you need to connect then via the IP address.
